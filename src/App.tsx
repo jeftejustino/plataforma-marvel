@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ToastContainer } from 'react-toastify';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-function App() {
+import '@base/config/ReactotronConfig';
+import GlobalStyles from '@base/styles/global';
+
+import history from '@base/services/history';
+import { store, persistor } from '@base/store';
+
+import Routes from '@base/routes';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Router history={history}>
+          <Routes />
+          <GlobalStyles />
+          <ToastContainer autoClose={3000} />
+        </Router>
+      </PersistGate>
+    </Provider>
   );
-}
+};
 
 export default App;
