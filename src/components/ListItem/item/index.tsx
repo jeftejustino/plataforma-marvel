@@ -1,4 +1,3 @@
-import { type } from 'os';
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { IoMdCloseCircleOutline } from 'react-icons/io';

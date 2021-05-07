@@ -8,6 +8,7 @@ import { IActionRequest } from './IActions';
 
 import avatarImg from '@base/assets/images/avatar.png';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* SignIn({ payload }: IActionRequest) {
   try {
     yield put(

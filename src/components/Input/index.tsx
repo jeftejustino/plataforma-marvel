@@ -1,4 +1,4 @@
-import React, { HtmlHTMLAttributes, InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
 import { Container } from './styles';
 

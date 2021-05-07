@@ -1,4 +1,4 @@
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { all, put, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import { LoadListSuccess } from './actions';
 // import api from '@base/services/api';
@@ -26,6 +26,7 @@ import { movies } from '@base/mock/movies';
 //     });
 // };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* LoadList({ payload }: IActionRequest) {
   try {
     yield put(

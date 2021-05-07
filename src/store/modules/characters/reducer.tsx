@@ -2,7 +2,6 @@ import produce from 'immer';
 import { Reducer } from 'redux';
 import { IProps } from './IActions';
 import types from './types';
-import types2 from '../auth/types';
 
 const initialState = {
   characters: null,

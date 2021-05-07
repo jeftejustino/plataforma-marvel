@@ -21,6 +21,7 @@ const Movies: React.FC = () => {
     if (movies?.total == 0) {
       dispatch(LoadListRequest(limit, 1));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [limit]);
 
   const goNext = () => {

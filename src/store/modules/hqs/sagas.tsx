@@ -24,6 +24,7 @@ const apiCall = (page: number, limit: number) => {
     });
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* LoadList({ payload }: IActionRequest) {
   try {
     const { data }: AxiosResponse = yield call(

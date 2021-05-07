@@ -21,6 +21,7 @@ const Hqs: React.FC = () => {
     if (hqs?.total == 0) {
       dispatch(LoadListRequest(limit, 1));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [limit]);
 
   const goNext = () => {

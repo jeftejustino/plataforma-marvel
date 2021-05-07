@@ -1,5 +1,5 @@
 import axios from 'axios';
-import CryptoJS from 'crypto-js';
+// import CryptoJS from 'crypto-js';
 
 // const PRIV_KEY = '';
 const PUBLIC_KEY = 'a7bd6e7e855dbc5397cef18a8263811d';
