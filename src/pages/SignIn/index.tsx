@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { SignInRequest } from '@base/store/modules/auth/actions';
@@ -24,6 +24,7 @@ import Button from '@base/components/Button';
 // interface IProps {}
 
 const SignIn: React.FC = () => {
+  const [classLogo, setClassLogo] = useState('');
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
@@ -33,6 +34,14 @@ const SignIn: React.FC = () => {
     dispatch(SignInRequest(login, password));
   }
 
+  useEffect(() => {
+    if (window.innerWidth > 800) {
+      setClassLogo('animationLogo');
+    } else {
+      setClassLogo('animationLogoMobile');
+    }
+  }, []);
+
   return (
     <Container>
       <Background>
@@ -41,7 +50,7 @@ const SignIn: React.FC = () => {
 
       <Form onSubmit={handleSubmit}>
         <Logo>
-          <img src={logo} />
+          <img className={classLogo} src={logo} />
         </Logo>
         <FormAnimation>
           <Wellcome>Bem-vindo(a) de volta!</Wellcome>

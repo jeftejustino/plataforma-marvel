@@ -1,10 +1,11 @@
 import React from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Types from './types';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 import Item from './item';
 
-import { Container, Actions, List } from './styles';
+import { Container, Actions, List, Loading } from './styles';
 
 interface IProps {
   goNext: any;
@@ -40,6 +41,15 @@ const ListItem: React.FC<IProps> = ({
               type={type}
             />
           ))}
+        {!items && loading ? (
+          <Loading>
+            <SkeletonTheme color="#636363" highlightColor="#777">
+              <Skeleton width={289} height={439} count={limit} />
+            </SkeletonTheme>
+          </Loading>
+        ) : (
+          <></>
+        )}
       </List>
 
       <Actions>

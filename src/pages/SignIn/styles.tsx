@@ -2,13 +2,17 @@ import styled from 'styled-components';
 import background from '@base/assets/images/background.png';
 
 export const Container = styled.div`
-  position: relative;
+  /* position: relative; */
 `;
 
 export const Form = styled.form`
   max-width: 383px;
   margin-left: 150px;
   padding: 90px 0px;
+
+  @media (max-width: 800px) {
+    margin: 0 auto;
+  }
 `;
 
 export const FormAnimation = styled.div`
@@ -17,13 +21,19 @@ export const FormAnimation = styled.div`
   animation-duration: 1s;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
+  position: absolute;
 
   @keyframes form-opacity {
     0% {
       opacity: 0;
     }
 
+    99% {
+      opacity: 1;
+    }
+
     100% {
+      position: relative;
       opacity: 1;
     }
   }
@@ -34,40 +44,86 @@ export const Logo = styled.div`
   img {
     width: 237px;
     position: absolute;
-
-    animation-name: logo-move;
     animation-duration: 2.5s;
-    animation-fill-mode: forwards;
+    top: 90px;
+    left: 223px;
+    transform: translate(0%, 0%);
+    @media (max-width: 800px) {
+      top: 90px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
 
-    @keyframes logo-move {
-      0% {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      20% {
-        left: 50%;
-        top: 50%;
-        transform: translate(-30%, -50%);
-      }
+  .animationLogo {
+    animation-name: logo-move;
+  }
+  .animationLogoMobile {
+    animation-name: logo-move2;
+  }
 
-      40% {
-        left: 223px;
-        top: 50%;
-        transform: translate(0%, -50%);
-      }
+  @keyframes logo-move {
+    0% {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    20% {
+      left: 50%;
+      top: 50%;
+      transform: translate(-40%, -50%);
+    }
 
-      60% {
-        left: 223px;
-        top: 50%;
-        transform: translate(0%, -50%);
-      }
+    40% {
+      left: 223px;
+      top: 50%;
+      transform: translate(0%, -50%);
+    }
 
-      100% {
-        top: 90px;
-        left: 223px;
-        transform: translate(0%, 0%);
-      }
+    60% {
+      left: 223px;
+      top: 50%;
+      transform: translate(0%, -50%);
+    }
+
+    100% {
+      top: 90px;
+      left: 223px;
+      transform: translate(0%, 0%);
+    }
+  }
+
+  @keyframes logo-move2 {
+    0% {
+      opacity: 0;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    20% {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    40% {
+      opacity: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    60% {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    100% {
+      top: 90px;
+      left: 50%;
+      transform: translate(-50%, 0%);
     }
   }
 `;
@@ -120,7 +176,7 @@ export const NotRegistered = styled.div`
 `;
 
 export const Background = styled.div`
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   z-index: 0;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Container } from './styles';
 
@@ -8,22 +8,34 @@ import { RootState } from '@base/store/types';
 import { IProps } from '@base/store/modules/characters/IActions';
 import ListItem from '@base/components/ListItem';
 import Types from '@base/components/ListItem/types';
+import { useWindowSize, Size } from '@base/util/resize';
 
 // interface IProps {}
 
 const Characters: React.FC = () => {
-  const limit = 3;
   const characters = useSelector(
     (state: RootState): IProps => state.characters,
   );
 
-  characters.page;
-  characters.limit;
+  const size: Size = useWindowSize();
+  const [limit, setLimit] = useState(0);
 
-  // const list = []
+  useEffect(() => {
+    if (size.width) {
+      if (limit != 1 && size.width < 830) {
+        setLimit(1);
+      } else if (limit != 2 && size.width <= 1100 && size.width >= 830) {
+        setLimit(2);
+      } else if (limit != 3 && size.width > 1100) {
+        setLimit(3);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [size]);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    if (characters?.total == 0) {
+    if (limit > 0 && (characters?.total == 0 || limit != characters.limit)) {
       dispatch(LoadListRequest(limit, 1));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -44,7 +56,7 @@ const Characters: React.FC = () => {
         goNext={goNext}
         goBack={goBack}
         page={characters.page}
-        limit={characters.limit}
+        limit={limit}
         total={characters.total}
         loading={characters.loading}
         type={Types.character}

@@ -9,29 +9,24 @@ import { IActionRequest } from './IActions';
 
 import { movies } from '@base/mock/movies';
 
-// import { AxiosResponse } from 'axios';
-
-// const apiCall = (page: number, limit: number) => {
-//   return api
-//     .get('/v1/public/series', {
-//       params: {
-//         offset: (page - 1) * limit,
-//         limit: limit,
-//         orderBy: 'title',
-//       },
-//     })
-//     .then(response => response.data)
-//     .catch(err => {
-//       throw err;
-//     });
-// };
-
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* LoadList({ payload }: IActionRequest) {
+  const mvs = [];
+  for (
+    let index = (payload.page - 1) * payload.limit;
+    index < payload.page * payload.limit;
+    index++
+  ) {
+    if (movies[index]) {
+      const element = movies[index];
+      mvs.push(element);
+    }
+  }
+
   try {
     yield put(
       LoadListSuccess({
-        movies: movies,
+        movies: mvs,
         limit: payload.limit,
         page: payload.page,
         total: movies.length,

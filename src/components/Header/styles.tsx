@@ -7,13 +7,23 @@ export const Container = styled.div`
   box-shadow: 0px -5px 5px 5px #ff0000;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 1000px) {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
 `;
 
 export const Logo = styled.div`
   flex-grow: 1;
-  padding: 35px 0px 25px 55px;
+  padding: 35px 55px 25px 55px;
   img {
     width: 122px;
+  }
+
+  @media (max-width: 1000px) {
+    text-align: center;
+    order: 1;
   }
 `;
 
@@ -35,6 +45,17 @@ export const Menu = styled.div`
   a.active {
     opacity: 1;
   }
+
+  @media (max-width: 1000px) {
+    a {
+      font-size: 26px;
+      margin-right: 0px;
+    }
+    order: 3;
+    flex-basis: 100%;
+    justify-content: space-around;
+    padding-bottom: 5px;
+  }
 `;
 
 export const Profile = styled.div`
@@ -53,5 +74,10 @@ export const Profile = styled.div`
     :hover {
       opacity: 0.75;
     }
+  }
+
+  @media (max-width: 1000px) {
+    justify-content: center;
+    order: 1;
   }
 `;

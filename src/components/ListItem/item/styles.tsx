@@ -203,4 +203,10 @@ export const MoreInfo = styled.div<{
       margin-left: -10px;
     }
   }
+
+  @media (max-width: 830px) {
+    z-index: 2;
+    padding: 30px 40px;
+    max-width: 100%;
+  }
 `;

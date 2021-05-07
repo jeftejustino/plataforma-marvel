@@ -32,10 +32,7 @@ const ListItem: React.FC<IProps> = ({ item, loading, first, type }) => {
           <div className="description">
             <div className="title">Aparições</div>
             {item.series.items.map((serie: any) => (
-              <>
-                {serie.name}
-                <br />
-              </>
+              <div key={serie.name}>{serie.name}</div>
             ))}
           </div>
         )}

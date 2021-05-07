@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Container } from './styles';
 
@@ -8,17 +8,33 @@ import { RootState } from '@base/store/types';
 import { IProps } from '@base/store/modules/hqs/IActions';
 import ListItem from '@base/components/ListItem';
 import Types from '@base/components/ListItem/types';
+import { useWindowSize, Size } from '@base/util/resize';
 
 // interface IProps {}
 
 const Hqs: React.FC = () => {
-  const limit = 3;
   const hqs = useSelector((state: RootState): IProps => state.hqs);
+
+  const size: Size = useWindowSize();
+  const [limit, setLimit] = useState(0);
+
+  useEffect(() => {
+    if (size.width) {
+      if (limit != 1 && size.width < 830) {
+        setLimit(1);
+      } else if (limit != 2 && size.width <= 1100 && size.width >= 830) {
+        setLimit(2);
+      } else if (limit != 3 && size.width > 1100) {
+        setLimit(3);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [size]);
 
   // const list = []
   const dispatch = useDispatch();
   useEffect(() => {
-    if (hqs?.total == 0) {
+    if (limit > 0 && (hqs?.total == 0 || limit != hqs.limit)) {
       dispatch(LoadListRequest(limit, 1));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,7 +55,7 @@ const Hqs: React.FC = () => {
         goNext={goNext}
         goBack={goBack}
         page={hqs.page}
-        limit={hqs.limit}
+        limit={limit}
         total={hqs.total}
         loading={hqs.loading}
         type={Types.hq}

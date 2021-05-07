@@ -31,9 +31,7 @@ const Header: React.FC = () => {
       </Logo>
 
       <Menu>
-        <NavLink aria-current to="characters">
-          Personagens
-        </NavLink>
+        <NavLink to="characters">Personagens</NavLink>
         <NavLink to="movies">Filmes</NavLink>
         <NavLink to="hqs">HQs</NavLink>
       </Menu>
