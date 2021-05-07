@@ -1,0 +1,196 @@
+{
+  "config": {
+    "title": "Plataforma Marvel",
+    "description": "My awesome app using docz",
+    "menu": [],
+    "version": "0.1.0",
+    "repository": null,
+    "native": false,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "README.md",
+      "value": {
+        "id": "04c6e90faac2675aa89e2176d2eec7d8",
+        "filepath": "README.md",
+        "fullpath": "C:\\Users\\jefte\\Projetos\\plataforma-marvel\\README.md",
+        "link": "",
+        "hidden": false,
+        "slug": "readme",
+        "route": "/readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "plataforma-marvel",
+            "depth": 1,
+            "value": "Plataforma Marvel"
+          },
+          {
+            "slug": "yarn-start",
+            "depth": 3,
+            "value": "yarn start"
+          },
+          {
+            "slug": "yarn-doczdev",
+            "depth": 3,
+            "value": "yarn docz:dev"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Button/Button.mdx",
+      "value": {
+        "name": "Button",
+        "menu": "Components",
+        "id": "2b773349a016959194c905ce6ad9d2d4",
+        "filepath": "src/components/Button/Button.mdx",
+        "fullpath": "C:\\Users\\jefte\\Projetos\\plataforma-marvel\\src\\components\\Button\\Button.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-button-button",
+        "route": "/src-components-button-button",
+        "headings": [
+          {
+            "slug": "button",
+            "depth": 1,
+            "value": "Button"
+          },
+          {
+            "slug": "descrição",
+            "depth": 2,
+            "value": "Descrição"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Header/Header.mdx",
+      "value": {
+        "name": "Header",
+        "menu": "Components",
+        "id": "8f55aa099a0ac7e0f41f8b2c8aedf8d4",
+        "filepath": "src/components/Header/Header.mdx",
+        "fullpath": "C:\\Users\\jefte\\Projetos\\plataforma-marvel\\src\\components\\Header\\Header.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-header-header",
+        "route": "/src-components-header-header",
+        "headings": [
+          {
+            "slug": "header",
+            "depth": 1,
+            "value": "Header"
+          },
+          {
+            "slug": "descrição",
+            "depth": 2,
+            "value": "Descrição"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Input/Input.mdx",
+      "value": {
+        "name": "Input",
+        "menu": "Components",
+        "id": "7780b551cb8b02f18f9ea05620d2e411",
+        "filepath": "src/components/Input/Input.mdx",
+        "fullpath": "C:\\Users\\jefte\\Projetos\\plataforma-marvel\\src\\components\\Input\\Input.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-input-input",
+        "route": "/src-components-input-input",
+        "headings": [
+          {
+            "slug": "input",
+            "depth": 1,
+            "value": "Input"
+          },
+          {
+            "slug": "descrição",
+            "depth": 2,
+            "value": "Descrição"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/ListItem/ListItem.mdx",
+      "value": {
+        "name": "ListItem",
+        "menu": "Components",
+        "id": "569ff5be15dcba93aec302b5ee418436",
+        "filepath": "src/components/ListItem/ListItem.mdx",
+        "fullpath": "C:\\Users\\jefte\\Projetos\\plataforma-marvel\\src\\components\\ListItem\\ListItem.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-list-item-list-item",
+        "route": "/src-components-list-item-list-item",
+        "headings": [
+          {
+            "slug": "input",
+            "depth": 1,
+            "value": "Input"
+          },
+          {
+            "slug": "descrição",
+            "depth": 2,
+            "value": "Descrição"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Select/Select.mdx",
+      "value": {
+        "name": "Select",
+        "menu": "Components",
+        "id": "17199738e8d17e24047781e0ed694bfe",
+        "filepath": "src/components/Select/Select.mdx",
+        "fullpath": "C:\\Users\\jefte\\Projetos\\plataforma-marvel\\src\\components\\Select\\Select.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-select-select",
+        "route": "/src-components-select-select",
+        "headings": [
+          {
+            "slug": "select",
+            "depth": 1,
+            "value": "Select"
+          },
+          {
+            "slug": "descrição",
+            "depth": 2,
+            "value": "Descrição"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic usage"
+          }
+        ]
+      }
+    }
+  ],
+  "props": []
+}

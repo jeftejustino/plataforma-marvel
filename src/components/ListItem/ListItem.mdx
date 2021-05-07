@@ -1,0 +1,29 @@
+---
+name: ListItem
+menu: Components
+---
+
+import { Playground } from 'docz';
+import ListItem from './index.tsx';
+import Types from './types.tsx';
+
+# Input
+
+## Descrição
+
+Componente para listar os quadrinhos, filmes e series
+
+## Basic usage
+
+<Playground>
+  <ListItem
+    goNext={n => {}}
+    goBack={n => {}}
+    items={[]}
+    page={1}
+    limit={3}
+    total={3}
+    loading={true}
+    type={Types.hq}
+  />
+</Playground>

@@ -3,9 +3,9 @@ import Select from 'react-select';
 
 import { Container } from './styles';
 
-type IProps = {
+export interface IProps {
   options: Array<{ label: string; value: string }>;
-};
+}
 
 const Input: React.FC<IProps> = ({ options, ...rest }) => {
   return (

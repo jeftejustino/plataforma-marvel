@@ -5,9 +5,9 @@ import { IoMdCloseCircleOutline } from 'react-icons/io';
 import { Container, Content, Info, MoreInfo } from './styles';
 import Types from '../types';
 
-import amazonImg from '@base/assets/images/ic-amazon.png';
-import americanasImg from '@base/assets/images/ic-americanas.png';
-import disneyImg from '@base/assets/images/ic-disney.png';
+import amazonImg from '../../../assets/images/ic-amazon.png';
+import americanasImg from '../../../assets/images/ic-americanas.png';
+import disneyImg from '../../../assets/images/ic-disney.png';
 
 interface IProps {
   item: any;
