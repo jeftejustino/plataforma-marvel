@@ -9,7 +9,6 @@ export const Form = styled.form`
   max-width: 383px;
   margin-left: 150px;
   padding: 90px 0px;
-
   @media (max-width: 800px) {
     margin: 0 auto;
   }
@@ -18,6 +17,9 @@ export const Form = styled.form`
 export const FormAnimation = styled.div`
   animation-name: form-opacity;
   opacity: 0;
+  opacity: 0;
+  width: 100%;
+  max-width: 383px;
   animation-duration: 1s;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
