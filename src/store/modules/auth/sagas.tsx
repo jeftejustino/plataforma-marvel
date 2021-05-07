@@ -1,25 +1,21 @@
-import { all, put, call, takeLatest } from 'redux-saga/effects';
+import { all, put, takeLatest } from 'redux-saga/effects';
+import types from './types';
 import { toast } from 'react-toastify';
 import { SignInSuccess, SignInFailure } from './actions';
 
-import api from '@base/services/api';
 import history from '@base/services/history';
+import { IActionRequest } from './IActions';
 
-export function* SignIn() {
+import avatarImg from '@base/assets/images/avatar.png';
+
+export function* SignIn({ payload }: IActionRequest) {
   try {
-    // const { email, password } = payload;
-
-    // const response = yield call(api.post, 'session', {
-    //   email,
-    //   password,
-    // });
-
-    // const { user, token } = response.data;
-
-    // api.defaults.headers.Authorization = `Bearer ${token}`;
-
-    // yield put(SignInSuccess(token, user));
-    yield put(SignInSuccess('a1b2c3d4e5f6', 'usuario'));
+    yield put(
+      SignInSuccess({
+        user: payload.login,
+        avatar: avatarImg,
+      }),
+    );
 
     history.push('/characters');
   } catch (error) {
@@ -28,22 +24,11 @@ export function* SignIn() {
   }
 }
 
-export function setToken({ payload }: any) {
-  console.log(payload);
-  if (payload) {
-    const { token } = payload.auth;
-    if (token) {
-      api.defaults.headers.Authorization = `Bearer ${token}`;
-    }
-  }
-}
-
-export function SingOut() {
+export function SingOut(): void {
   history.push('/');
 }
 
 export default all([
-  takeLatest('@auth/SIGN_IN_REQUEST', SignIn),
-  // takeLatest('persist/REHYDRATE', setToken),
-  takeLatest('@auth/SIGN_OUT', SingOut),
+  takeLatest(types.SIGN_IN_REQUEST, SignIn),
+  takeLatest(types.SIGN_OUT, SingOut),
 ]);

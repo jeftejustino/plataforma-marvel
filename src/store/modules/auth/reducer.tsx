@@ -1,23 +1,13 @@
 import produce from 'immer';
 import { Reducer } from 'redux';
-import { Action } from './IAction';
-
-interface IProps {
-  loading: boolean;
-  signed: boolean;
-  token: null | string;
-}
+import { IProps } from './IActions';
 
 const initialState = {
   loading: false,
   signed: false,
-  token: null,
 };
 
-const auth: Reducer<IProps> = (
-  state = initialState,
-  action: Action,
-): IProps => {
+const auth: Reducer<IProps> = (state = initialState, action): IProps => {
   return produce(state, draft => {
     switch (action.type) {
       case '@auth/SIGN_IN_REQUEST': {
@@ -27,7 +17,6 @@ const auth: Reducer<IProps> = (
       case '@auth/SIGN_IN_SUCCESS': {
         draft.loading = false;
         draft.signed = true;
-        draft.token = action.payload.token;
         break;
       }
       case '@auth/SIGN_IN_FAILURE': {
@@ -37,7 +26,6 @@ const auth: Reducer<IProps> = (
 
       case '@auth/SIGN_OUT': {
         draft.signed = false;
-        draft.token = null;
         break;
       }
 

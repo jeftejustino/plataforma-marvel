@@ -1,27 +1,28 @@
-import { Action } from './IAction';
+import { IAction, IActionSuccess, IActionRequest, IProfile } from './IActions';
+import types from './types';
 
-export function SignInRequest(email: string, password: string): Action {
+export function SignInRequest(login: string, password: string): IActionRequest {
   return {
-    type: '@auth/SIGN_IN_REQUEST',
-    payload: { email, password },
+    type: types.SIGN_IN_REQUEST,
+    payload: { login, password },
   };
 }
 
-export function SignInSuccess(token: string, profile: string): Action {
+export function SignInSuccess(profile: IProfile): IActionSuccess {
   return {
-    type: '@auth/SIGN_IN_SUCCESS',
-    payload: { token, profile },
+    type: types.SIGN_IN_SUCCESS,
+    payload: { profile },
   };
 }
 
-export function SignInFailure(): Action {
+export function SignInFailure(): IAction {
   return {
-    type: '@auth/SIGN_IN_FAILURE',
+    type: types.SIGN_IN_FAILURE,
   };
 }
 
-export function SingOut(): Action {
+export function SingOut(): IAction {
   return {
-    type: '@auth/SIGN_OUT',
+    type: types.SIGN_OUT,
   };
 }

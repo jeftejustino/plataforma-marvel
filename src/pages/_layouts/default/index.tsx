@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Background, Content } from './styles';
 
 import Header from '@base/components/Header';
 
@@ -12,7 +12,8 @@ const defaultLayout: React.FC<IProps> = ({ children }) => {
   return (
     <Container>
       <Header />
-      {children}
+      <Background />
+      <Content>{children}</Content>
     </Container>
   );
 };

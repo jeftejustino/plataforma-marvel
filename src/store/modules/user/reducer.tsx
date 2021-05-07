@@ -1,29 +1,22 @@
 import produce from 'immer';
 import { Reducer } from 'redux';
-import { Action } from './IAction';
-
-interface IProps {
-  loading: boolean;
-  profile: null;
-}
+import { IProps } from './IActions';
+import types from '../auth/types';
 
 const initialStates = {
   loading: false,
   profile: null,
 };
 
-const user: Reducer<IProps> = (
-  state = initialStates,
-  action: Action,
-): IProps => {
+const user: Reducer<IProps> = (state = initialStates, action): IProps => {
   return produce(state, draft => {
     switch (action.type) {
-      case '@auth/SIGN_IN_SUCCESS': {
+      case types.SIGN_IN_SUCCESS: {
         draft.profile = action.payload.profile;
         break;
       }
 
-      case '@auth/SIGN_OUT': {
+      case types.SIGN_OUT: {
         draft.profile = null;
         break;
       }

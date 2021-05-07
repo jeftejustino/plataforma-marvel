@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,7 +10,14 @@ import { Container, Menu, Logo, Profile } from './styles';
 
 import logoImg from '@base/assets/images/logo.svg';
 
+import { RootState } from '@base/store/types';
+import { IProfile } from '@base/store/modules/auth/IActions';
+
 const Header: React.FC = () => {
+  const profile = useSelector(
+    (state: RootState): IProfile | null => state.user.profile,
+  );
+
   const dispatch = useDispatch();
 
   function handleLogout() {
@@ -24,13 +31,15 @@ const Header: React.FC = () => {
       </Logo>
 
       <Menu>
-        <Link to="characters">Personagens</Link>
-        <Link to="movies">Filmes</Link>
-        <Link to="hqs">HQs</Link>
+        <NavLink aria-current to="characters">
+          Personagens
+        </NavLink>
+        <NavLink to="movies">Filmes</NavLink>
+        <NavLink to="hqs">HQs</NavLink>
       </Menu>
 
       <Profile>
-        {/* <img src={}> */}
+        <img src={profile?.avatar} />
         <a href="#" onClick={() => handleLogout()}>
           Sair
         </a>
