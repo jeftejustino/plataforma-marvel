@@ -84,11 +84,11 @@ const SignIn: React.FC = () => {
             </label>
 
             <div className="forgot">
-              <a href="#">Esqueci a senha</a>
+              <a href="#">Esqueci a senha*</a>
             </div>
           </SaveLoginForgot>
 
-          <Button type="submit">Entrar</Button>
+          <Button type="submit">Entrar!</Button>
 
           <NotRegistered>
             Ainda não tem login? <a href="#">Cadastre-se</a>
